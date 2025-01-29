@@ -12,7 +12,7 @@ Based on the resources available to the player, how should the player spend reso
 |Decision variabe, the amount of military unit $j$ we make| $x_j$ |
 |How much militray power $i$ is in the unit $j$| $a_j$| 
 |Military power requirement |$b_i$ |
-|Housing constraint|$C$ |
+|Housing constraint|$h$ |
 
 #### Build Solutions
 
@@ -25,12 +25,12 @@ $$
 The military requirement constraints are
 
 $$
-\sum_j a_{ij} x_j \ \geq \ b \,  \ \ i = 1,\dots,m
+\sum_j a_{ij} x_j \geq b_i, i = 1,\dots,m
 $$
 
-$$x_j \geq 0, \ \ j = 1,\dots,n$$
+$$x_j \geq 0, j = 1,\dots,n$$
 
 The housing constraint is:
 $$
-\sum_j x_j \ \leq \ C \
+\sum_j x_j \leq h
 $$
