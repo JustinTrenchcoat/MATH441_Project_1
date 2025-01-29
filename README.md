@@ -3,11 +3,34 @@
 ## Problem Statement
 ### In real-time strategy (RTS) games, players must manage resources to strength their military power to defeat other players. 
 The player has to make sure that the military power requirement is met before declaring war on other players. 
-Based on the resources available to the player, how should the player harvest resources to meet the requirements while minimizing the cost? 
+Based on the resources available to the player, how should the player spend resources to meet the requirements while minimizing the cost? 
 
 #### Define Variables
+| Description | Symbol | 
+|-------------|--------|
+|Cost of unit $j$ | $c_j$ | 
+|Decision variabe, the amount of military unit $j$ we make| $x_j$ |
+|How much militray power $i$ is in the unit $j$| $a_j$| 
+|Military power requirement |$b_i$ |
+|Housing constraint|$C$ |
 
-* $c_j$  cost of resource $j$
-* $x_j$ amount of resource $j$ we harvest
-* $a_{ij}$ how much militray power $i$ is in the product $j$ 
-* $b_i$ military power of product $i$
+#### Build Solutions
+
+The total cost
+
+$$
+\mathbf{c}^T \mathbf{x} = \sum_j c_j x_j
+$$
+
+The military requirement constraints are
+
+$$
+\sum_j a_{ij} x_j \ \geq \ b \,  \ \ i = 1,\dots,m
+$$
+
+$$x_j \geq 0, \ \ j = 1,\dots,n$$
+
+The housing constraint is:
+$$
+\sum_j x_j \ \leq \ C \
+$$
